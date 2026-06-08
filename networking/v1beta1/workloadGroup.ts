@@ -6,8 +6,6 @@ import * as inputs from "../../types/input";
 import * as outputs from "../../types/output";
 import * as utilities from "../../utilities";
 
-import {ObjectMeta} from "../../meta/v1";
-
 export class WorkloadGroup extends pulumi.CustomResource {
     /**
      * Get an existing WorkloadGroup resource's state with the given name, ID, and optional extra
@@ -35,14 +33,20 @@ export class WorkloadGroup extends pulumi.CustomResource {
         return obj['__pulumiType'] === WorkloadGroup.__pulumiType;
     }
 
-    public readonly apiVersion!: pulumi.Output<"networking.istio.io/v1beta1" | undefined>;
-    public readonly kind!: pulumi.Output<"WorkloadGroup" | undefined>;
-    public readonly metadata!: pulumi.Output<ObjectMeta | undefined>;
     /**
-     * Describes a collection of workload instances. See more details at: https://istio.io/docs/reference/config/networking/workload-group.html
+     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
      */
-    public readonly spec!: pulumi.Output<outputs.networking.v1beta1.WorkloadGroupSpec>;
-    public readonly status!: pulumi.Output<{[key: string]: any} | undefined>;
+    declare public readonly apiVersion: pulumi.Output<"networking.istio.io/v1beta1">;
+    /**
+     * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+     */
+    declare public readonly kind: pulumi.Output<"WorkloadGroup">;
+    /**
+     * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+     */
+    declare public readonly metadata: pulumi.Output<outputs.meta.v1.ObjectMeta>;
+    declare public readonly spec: pulumi.Output<outputs.networking.v1beta1.WorkloadGroupSpec>;
+    declare public /*out*/ readonly status: pulumi.Output<{[key: string]: any}>;
 
     /**
      * Create a WorkloadGroup resource with the given unique name, arguments, and options.
@@ -57,9 +61,9 @@ export class WorkloadGroup extends pulumi.CustomResource {
         if (!opts.id) {
             resourceInputs["apiVersion"] = "networking.istio.io/v1beta1";
             resourceInputs["kind"] = "WorkloadGroup";
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["spec"] = args ? args.spec : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["spec"] = args?.spec;
+            resourceInputs["status"] = undefined /*out*/;
         } else {
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["kind"] = undefined /*out*/;
@@ -68,6 +72,8 @@ export class WorkloadGroup extends pulumi.CustomResource {
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const aliasOpts = { aliases: [{ type: "kubernetes:networking.istio.io/v1:WorkloadGroup" }, { type: "kubernetes:networking.istio.io/v1alpha3:WorkloadGroup" }] };
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(WorkloadGroup.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -76,12 +82,17 @@ export class WorkloadGroup extends pulumi.CustomResource {
  * The set of arguments for constructing a WorkloadGroup resource.
  */
 export interface WorkloadGroupArgs {
-    apiVersion?: pulumi.Input<"networking.istio.io/v1beta1">;
-    kind?: pulumi.Input<"WorkloadGroup">;
-    metadata?: pulumi.Input<ObjectMeta>;
     /**
-     * Describes a collection of workload instances. See more details at: https://istio.io/docs/reference/config/networking/workload-group.html
+     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
      */
-    spec?: pulumi.Input<inputs.networking.v1beta1.WorkloadGroupSpecArgs>;
-    status?: pulumi.Input<{[key: string]: any}>;
+    apiVersion?: pulumi.Input<"networking.istio.io/v1beta1" | undefined>;
+    /**
+     * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+     */
+    kind?: pulumi.Input<"WorkloadGroup" | undefined>;
+    /**
+     * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+     */
+    metadata?: pulumi.Input<inputs.meta.v1.ObjectMeta | undefined>;
+    spec?: pulumi.Input<inputs.networking.v1beta1.WorkloadGroupSpec | undefined>;
 }

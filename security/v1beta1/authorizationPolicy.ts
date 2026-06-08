@@ -2,9 +2,9 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../../types/input";
+import * as outputs from "../../types/output";
 import * as utilities from "../../utilities";
-
-import {ObjectMeta} from "../../meta/v1";
 
 export class AuthorizationPolicy extends pulumi.CustomResource {
     /**
@@ -33,14 +33,20 @@ export class AuthorizationPolicy extends pulumi.CustomResource {
         return obj['__pulumiType'] === AuthorizationPolicy.__pulumiType;
     }
 
-    public readonly apiVersion!: pulumi.Output<"security.istio.io/v1beta1" | undefined>;
-    public readonly kind!: pulumi.Output<"AuthorizationPolicy" | undefined>;
-    public readonly metadata!: pulumi.Output<ObjectMeta | undefined>;
     /**
-     * Configuration for access control on workloads. See more details at: https://istio.io/docs/reference/config/security/authorization-policy.html
+     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
      */
-    public readonly spec!: pulumi.Output<any | undefined>;
-    public readonly status!: pulumi.Output<{[key: string]: any} | undefined>;
+    declare public readonly apiVersion: pulumi.Output<"security.istio.io/v1beta1">;
+    /**
+     * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+     */
+    declare public readonly kind: pulumi.Output<"AuthorizationPolicy">;
+    /**
+     * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+     */
+    declare public readonly metadata: pulumi.Output<outputs.meta.v1.ObjectMeta>;
+    declare public readonly spec: pulumi.Output<outputs.security.v1beta1.AuthorizationPolicySpec>;
+    declare public /*out*/ readonly status: pulumi.Output<{[key: string]: any}>;
 
     /**
      * Create a AuthorizationPolicy resource with the given unique name, arguments, and options.
@@ -55,9 +61,9 @@ export class AuthorizationPolicy extends pulumi.CustomResource {
         if (!opts.id) {
             resourceInputs["apiVersion"] = "security.istio.io/v1beta1";
             resourceInputs["kind"] = "AuthorizationPolicy";
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["spec"] = args ? args.spec : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["spec"] = args?.spec;
+            resourceInputs["status"] = undefined /*out*/;
         } else {
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["kind"] = undefined /*out*/;
@@ -66,6 +72,8 @@ export class AuthorizationPolicy extends pulumi.CustomResource {
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const aliasOpts = { aliases: [{ type: "kubernetes:security.istio.io/v1:AuthorizationPolicy" }] };
+        opts = pulumi.mergeOptions(opts, aliasOpts);
         super(AuthorizationPolicy.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -74,12 +82,17 @@ export class AuthorizationPolicy extends pulumi.CustomResource {
  * The set of arguments for constructing a AuthorizationPolicy resource.
  */
 export interface AuthorizationPolicyArgs {
-    apiVersion?: pulumi.Input<"security.istio.io/v1beta1">;
-    kind?: pulumi.Input<"AuthorizationPolicy">;
-    metadata?: pulumi.Input<ObjectMeta>;
     /**
-     * Configuration for access control on workloads. See more details at: https://istio.io/docs/reference/config/security/authorization-policy.html
+     * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
      */
-    spec?: any;
-    status?: pulumi.Input<{[key: string]: any}>;
+    apiVersion?: pulumi.Input<"security.istio.io/v1beta1" | undefined>;
+    /**
+     * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+     */
+    kind?: pulumi.Input<"AuthorizationPolicy" | undefined>;
+    /**
+     * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+     */
+    metadata?: pulumi.Input<inputs.meta.v1.ObjectMeta | undefined>;
+    spec?: pulumi.Input<inputs.security.v1beta1.AuthorizationPolicySpec | undefined>;
 }

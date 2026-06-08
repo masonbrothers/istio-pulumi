@@ -10,10 +10,30 @@ export type TrafficExtension = import("./trafficExtension").TrafficExtension;
 export const TrafficExtension: typeof import("./trafficExtension").TrafficExtension = null as any;
 utilities.lazyLoad(exports, ["TrafficExtension"], () => require("./trafficExtension"));
 
+export { TrafficExtensionListArgs } from "./trafficExtensionList";
+export type TrafficExtensionList = import("./trafficExtensionList").TrafficExtensionList;
+export const TrafficExtensionList: typeof import("./trafficExtensionList").TrafficExtensionList = null as any;
+utilities.lazyLoad(exports, ["TrafficExtensionList"], () => require("./trafficExtensionList"));
+
+export { TrafficExtensionPatchArgs } from "./trafficExtensionPatch";
+export type TrafficExtensionPatch = import("./trafficExtensionPatch").TrafficExtensionPatch;
+export const TrafficExtensionPatch: typeof import("./trafficExtensionPatch").TrafficExtensionPatch = null as any;
+utilities.lazyLoad(exports, ["TrafficExtensionPatch"], () => require("./trafficExtensionPatch"));
+
 export { WasmPluginArgs } from "./wasmPlugin";
 export type WasmPlugin = import("./wasmPlugin").WasmPlugin;
 export const WasmPlugin: typeof import("./wasmPlugin").WasmPlugin = null as any;
 utilities.lazyLoad(exports, ["WasmPlugin"], () => require("./wasmPlugin"));
+
+export { WasmPluginListArgs } from "./wasmPluginList";
+export type WasmPluginList = import("./wasmPluginList").WasmPluginList;
+export const WasmPluginList: typeof import("./wasmPluginList").WasmPluginList = null as any;
+utilities.lazyLoad(exports, ["WasmPluginList"], () => require("./wasmPluginList"));
+
+export { WasmPluginPatchArgs } from "./wasmPluginPatch";
+export type WasmPluginPatch = import("./wasmPluginPatch").WasmPluginPatch;
+export const WasmPluginPatch: typeof import("./wasmPluginPatch").WasmPluginPatch = null as any;
+utilities.lazyLoad(exports, ["WasmPluginPatch"], () => require("./wasmPluginPatch"));
 
 
 const _module = {
@@ -22,8 +42,16 @@ const _module = {
         switch (type) {
             case "kubernetes:extensions.istio.io/v1alpha1:TrafficExtension":
                 return new TrafficExtension(name, <any>undefined, { urn })
+            case "kubernetes:extensions.istio.io/v1alpha1:TrafficExtensionList":
+                return new TrafficExtensionList(name, <any>undefined, { urn })
+            case "kubernetes:extensions.istio.io/v1alpha1:TrafficExtensionPatch":
+                return new TrafficExtensionPatch(name, <any>undefined, { urn })
             case "kubernetes:extensions.istio.io/v1alpha1:WasmPlugin":
                 return new WasmPlugin(name, <any>undefined, { urn })
+            case "kubernetes:extensions.istio.io/v1alpha1:WasmPluginList":
+                return new WasmPluginList(name, <any>undefined, { urn })
+            case "kubernetes:extensions.istio.io/v1alpha1:WasmPluginPatch":
+                return new WasmPluginPatch(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }

@@ -10,40 +10,120 @@ export type DestinationRule = import("./destinationRule").DestinationRule;
 export const DestinationRule: typeof import("./destinationRule").DestinationRule = null as any;
 utilities.lazyLoad(exports, ["DestinationRule"], () => require("./destinationRule"));
 
+export { DestinationRuleListArgs } from "./destinationRuleList";
+export type DestinationRuleList = import("./destinationRuleList").DestinationRuleList;
+export const DestinationRuleList: typeof import("./destinationRuleList").DestinationRuleList = null as any;
+utilities.lazyLoad(exports, ["DestinationRuleList"], () => require("./destinationRuleList"));
+
+export { DestinationRulePatchArgs } from "./destinationRulePatch";
+export type DestinationRulePatch = import("./destinationRulePatch").DestinationRulePatch;
+export const DestinationRulePatch: typeof import("./destinationRulePatch").DestinationRulePatch = null as any;
+utilities.lazyLoad(exports, ["DestinationRulePatch"], () => require("./destinationRulePatch"));
+
 export { EnvoyFilterArgs } from "./envoyFilter";
 export type EnvoyFilter = import("./envoyFilter").EnvoyFilter;
 export const EnvoyFilter: typeof import("./envoyFilter").EnvoyFilter = null as any;
 utilities.lazyLoad(exports, ["EnvoyFilter"], () => require("./envoyFilter"));
+
+export { EnvoyFilterListArgs } from "./envoyFilterList";
+export type EnvoyFilterList = import("./envoyFilterList").EnvoyFilterList;
+export const EnvoyFilterList: typeof import("./envoyFilterList").EnvoyFilterList = null as any;
+utilities.lazyLoad(exports, ["EnvoyFilterList"], () => require("./envoyFilterList"));
+
+export { EnvoyFilterPatchArgs } from "./envoyFilterPatch";
+export type EnvoyFilterPatch = import("./envoyFilterPatch").EnvoyFilterPatch;
+export const EnvoyFilterPatch: typeof import("./envoyFilterPatch").EnvoyFilterPatch = null as any;
+utilities.lazyLoad(exports, ["EnvoyFilterPatch"], () => require("./envoyFilterPatch"));
 
 export { GatewayArgs } from "./gateway";
 export type Gateway = import("./gateway").Gateway;
 export const Gateway: typeof import("./gateway").Gateway = null as any;
 utilities.lazyLoad(exports, ["Gateway"], () => require("./gateway"));
 
+export { GatewayListArgs } from "./gatewayList";
+export type GatewayList = import("./gatewayList").GatewayList;
+export const GatewayList: typeof import("./gatewayList").GatewayList = null as any;
+utilities.lazyLoad(exports, ["GatewayList"], () => require("./gatewayList"));
+
+export { GatewayPatchArgs } from "./gatewayPatch";
+export type GatewayPatch = import("./gatewayPatch").GatewayPatch;
+export const GatewayPatch: typeof import("./gatewayPatch").GatewayPatch = null as any;
+utilities.lazyLoad(exports, ["GatewayPatch"], () => require("./gatewayPatch"));
+
 export { ServiceEntryArgs } from "./serviceEntry";
 export type ServiceEntry = import("./serviceEntry").ServiceEntry;
 export const ServiceEntry: typeof import("./serviceEntry").ServiceEntry = null as any;
 utilities.lazyLoad(exports, ["ServiceEntry"], () => require("./serviceEntry"));
+
+export { ServiceEntryListArgs } from "./serviceEntryList";
+export type ServiceEntryList = import("./serviceEntryList").ServiceEntryList;
+export const ServiceEntryList: typeof import("./serviceEntryList").ServiceEntryList = null as any;
+utilities.lazyLoad(exports, ["ServiceEntryList"], () => require("./serviceEntryList"));
+
+export { ServiceEntryPatchArgs } from "./serviceEntryPatch";
+export type ServiceEntryPatch = import("./serviceEntryPatch").ServiceEntryPatch;
+export const ServiceEntryPatch: typeof import("./serviceEntryPatch").ServiceEntryPatch = null as any;
+utilities.lazyLoad(exports, ["ServiceEntryPatch"], () => require("./serviceEntryPatch"));
 
 export { SidecarArgs } from "./sidecar";
 export type Sidecar = import("./sidecar").Sidecar;
 export const Sidecar: typeof import("./sidecar").Sidecar = null as any;
 utilities.lazyLoad(exports, ["Sidecar"], () => require("./sidecar"));
 
+export { SidecarListArgs } from "./sidecarList";
+export type SidecarList = import("./sidecarList").SidecarList;
+export const SidecarList: typeof import("./sidecarList").SidecarList = null as any;
+utilities.lazyLoad(exports, ["SidecarList"], () => require("./sidecarList"));
+
+export { SidecarPatchArgs } from "./sidecarPatch";
+export type SidecarPatch = import("./sidecarPatch").SidecarPatch;
+export const SidecarPatch: typeof import("./sidecarPatch").SidecarPatch = null as any;
+utilities.lazyLoad(exports, ["SidecarPatch"], () => require("./sidecarPatch"));
+
 export { VirtualServiceArgs } from "./virtualService";
 export type VirtualService = import("./virtualService").VirtualService;
 export const VirtualService: typeof import("./virtualService").VirtualService = null as any;
 utilities.lazyLoad(exports, ["VirtualService"], () => require("./virtualService"));
+
+export { VirtualServiceListArgs } from "./virtualServiceList";
+export type VirtualServiceList = import("./virtualServiceList").VirtualServiceList;
+export const VirtualServiceList: typeof import("./virtualServiceList").VirtualServiceList = null as any;
+utilities.lazyLoad(exports, ["VirtualServiceList"], () => require("./virtualServiceList"));
+
+export { VirtualServicePatchArgs } from "./virtualServicePatch";
+export type VirtualServicePatch = import("./virtualServicePatch").VirtualServicePatch;
+export const VirtualServicePatch: typeof import("./virtualServicePatch").VirtualServicePatch = null as any;
+utilities.lazyLoad(exports, ["VirtualServicePatch"], () => require("./virtualServicePatch"));
 
 export { WorkloadEntryArgs } from "./workloadEntry";
 export type WorkloadEntry = import("./workloadEntry").WorkloadEntry;
 export const WorkloadEntry: typeof import("./workloadEntry").WorkloadEntry = null as any;
 utilities.lazyLoad(exports, ["WorkloadEntry"], () => require("./workloadEntry"));
 
+export { WorkloadEntryListArgs } from "./workloadEntryList";
+export type WorkloadEntryList = import("./workloadEntryList").WorkloadEntryList;
+export const WorkloadEntryList: typeof import("./workloadEntryList").WorkloadEntryList = null as any;
+utilities.lazyLoad(exports, ["WorkloadEntryList"], () => require("./workloadEntryList"));
+
+export { WorkloadEntryPatchArgs } from "./workloadEntryPatch";
+export type WorkloadEntryPatch = import("./workloadEntryPatch").WorkloadEntryPatch;
+export const WorkloadEntryPatch: typeof import("./workloadEntryPatch").WorkloadEntryPatch = null as any;
+utilities.lazyLoad(exports, ["WorkloadEntryPatch"], () => require("./workloadEntryPatch"));
+
 export { WorkloadGroupArgs } from "./workloadGroup";
 export type WorkloadGroup = import("./workloadGroup").WorkloadGroup;
 export const WorkloadGroup: typeof import("./workloadGroup").WorkloadGroup = null as any;
 utilities.lazyLoad(exports, ["WorkloadGroup"], () => require("./workloadGroup"));
+
+export { WorkloadGroupListArgs } from "./workloadGroupList";
+export type WorkloadGroupList = import("./workloadGroupList").WorkloadGroupList;
+export const WorkloadGroupList: typeof import("./workloadGroupList").WorkloadGroupList = null as any;
+utilities.lazyLoad(exports, ["WorkloadGroupList"], () => require("./workloadGroupList"));
+
+export { WorkloadGroupPatchArgs } from "./workloadGroupPatch";
+export type WorkloadGroupPatch = import("./workloadGroupPatch").WorkloadGroupPatch;
+export const WorkloadGroupPatch: typeof import("./workloadGroupPatch").WorkloadGroupPatch = null as any;
+utilities.lazyLoad(exports, ["WorkloadGroupPatch"], () => require("./workloadGroupPatch"));
 
 
 const _module = {
@@ -52,20 +132,52 @@ const _module = {
         switch (type) {
             case "kubernetes:networking.istio.io/v1alpha3:DestinationRule":
                 return new DestinationRule(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:DestinationRuleList":
+                return new DestinationRuleList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:DestinationRulePatch":
+                return new DestinationRulePatch(name, <any>undefined, { urn })
             case "kubernetes:networking.istio.io/v1alpha3:EnvoyFilter":
                 return new EnvoyFilter(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:EnvoyFilterList":
+                return new EnvoyFilterList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:EnvoyFilterPatch":
+                return new EnvoyFilterPatch(name, <any>undefined, { urn })
             case "kubernetes:networking.istio.io/v1alpha3:Gateway":
                 return new Gateway(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:GatewayList":
+                return new GatewayList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:GatewayPatch":
+                return new GatewayPatch(name, <any>undefined, { urn })
             case "kubernetes:networking.istio.io/v1alpha3:ServiceEntry":
                 return new ServiceEntry(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:ServiceEntryList":
+                return new ServiceEntryList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:ServiceEntryPatch":
+                return new ServiceEntryPatch(name, <any>undefined, { urn })
             case "kubernetes:networking.istio.io/v1alpha3:Sidecar":
                 return new Sidecar(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:SidecarList":
+                return new SidecarList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:SidecarPatch":
+                return new SidecarPatch(name, <any>undefined, { urn })
             case "kubernetes:networking.istio.io/v1alpha3:VirtualService":
                 return new VirtualService(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:VirtualServiceList":
+                return new VirtualServiceList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:VirtualServicePatch":
+                return new VirtualServicePatch(name, <any>undefined, { urn })
             case "kubernetes:networking.istio.io/v1alpha3:WorkloadEntry":
                 return new WorkloadEntry(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:WorkloadEntryList":
+                return new WorkloadEntryList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:WorkloadEntryPatch":
+                return new WorkloadEntryPatch(name, <any>undefined, { urn })
             case "kubernetes:networking.istio.io/v1alpha3:WorkloadGroup":
                 return new WorkloadGroup(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:WorkloadGroupList":
+                return new WorkloadGroupList(name, <any>undefined, { urn })
+            case "kubernetes:networking.istio.io/v1alpha3:WorkloadGroupPatch":
+                return new WorkloadGroupPatch(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }

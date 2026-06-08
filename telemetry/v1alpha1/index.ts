@@ -10,6 +10,16 @@ export type Telemetry = import("./telemetry").Telemetry;
 export const Telemetry: typeof import("./telemetry").Telemetry = null as any;
 utilities.lazyLoad(exports, ["Telemetry"], () => require("./telemetry"));
 
+export { TelemetryListArgs } from "./telemetryList";
+export type TelemetryList = import("./telemetryList").TelemetryList;
+export const TelemetryList: typeof import("./telemetryList").TelemetryList = null as any;
+utilities.lazyLoad(exports, ["TelemetryList"], () => require("./telemetryList"));
+
+export { TelemetryPatchArgs } from "./telemetryPatch";
+export type TelemetryPatch = import("./telemetryPatch").TelemetryPatch;
+export const TelemetryPatch: typeof import("./telemetryPatch").TelemetryPatch = null as any;
+utilities.lazyLoad(exports, ["TelemetryPatch"], () => require("./telemetryPatch"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -17,6 +27,10 @@ const _module = {
         switch (type) {
             case "kubernetes:telemetry.istio.io/v1alpha1:Telemetry":
                 return new Telemetry(name, <any>undefined, { urn })
+            case "kubernetes:telemetry.istio.io/v1alpha1:TelemetryList":
+                return new TelemetryList(name, <any>undefined, { urn })
+            case "kubernetes:telemetry.istio.io/v1alpha1:TelemetryPatch":
+                return new TelemetryPatch(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
